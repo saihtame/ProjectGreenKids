@@ -4,7 +4,7 @@ using System.Drawing;
 internal class Program
 {
     static List<String> clothesTypes = new List<string> { "pants", "t-shirt", "shoes" };
-    static List<String> clothesBrands = new List<string> { "jackandjones", "m&m" };
+    static List<String> clothesBrands = new List<string> { "jackandjones", "h&m" };
     static Dictionary<String, double> c0Savings = new Dictionary<String, double> 
     {
         {"denim", 20.0 },
@@ -24,7 +24,7 @@ internal class Program
             } else {
                 Console.WriteLine("Failed to add clothes item");
             }
-            Console.WriteLine("\n\n");
+            Console.WriteLine("");
         }
     }
 
@@ -113,12 +113,14 @@ internal class Program
     {
         String? str = null;
         int value;
-
+        
+        // Retry until successful
         while (true)
         {
             Console.Write("Condition: ");
             str = Console.ReadLine();
 
+            // If we successfully parse the value, we return.
             if (int.TryParse(str, out value))
             {
                 if (value >= 0 && value <= 2)
